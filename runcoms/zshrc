@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 #
 # Executes commands at the start of an interactive session.
 #
@@ -10,4 +12,26 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+if (($+TMUX)); then
+  unset zle_bracketed_paste
+fi
+
+source "${ZDOTDIR:-$HOME}/.zprezto/hao/aliases.sh"
+source ~/.fzf.zsh
+setopt ignoreeof
+unsetopt case_glob
+unsetopt nomatch
+source ~/.zshrc-prelude
+source ~/.zshrc-ssh-agent
+source ~/.zshrc-here
+export FZF_TMUX=0
+bindkey "^d" delete-char
+
+export WORDCHARS=
+export CLICOLOR=1
+export LESS=-Ri
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
+if [[ $TERM_PROGRAM =~ 'iTerm.app' ]]; then
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+fi
