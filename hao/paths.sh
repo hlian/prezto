@@ -1,8 +1,6 @@
 # https://github.com/sfackler/rust-openssl/issues/255
 export OPENSSL_INCLUDE_DIR=/usr/local/opt/openssl/include
 
-echo $typeset
-
 if [[ -d ~/.local/bin ]]; then
   path=("$HOME/.local/bin" $path)
   path=("$HOME/.stack/programs/x86_64-osx/ghc-8.0.2/bin" $path)
