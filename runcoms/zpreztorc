@@ -38,7 +38,7 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'completion' \
   'prompt' \
-  'syntax-highlighting' 'osx'
+  'git' 'syntax-highlighting' 'osx'
 
 #
 # Autosuggestions
@@ -217,7 +217,6 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 # Set the default session name:
 # zstyle ':prezto:module:tmux:session' name 'YOUR DEFAULT SESSION NAME'
 
-#
 # Utility
 #
 
@@ -227,6 +226,7 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 # zstyle ':prezto:module:utility' safe-ops 'yes'
 
 zstyle ':prezto:module:git:info' verbose yes
+zstyle ':prezto:module:git:alias' skip yes
 zstyle ':prezto:module:osx:man' dash-keyword 'manpages'
 zstyle ':prezto:module:prompt' show-return-val 'yes'
 zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github' 'id_ed25519'
