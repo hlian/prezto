@@ -37,7 +37,6 @@ fi
 
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
-source "${ZDOTDIR:-$HOME}/.zprezto/hao/paths.sh"
 
 # Set the list of directories that cd searches.
 # cdpath=(

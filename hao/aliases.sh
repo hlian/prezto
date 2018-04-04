@@ -45,6 +45,7 @@ alias gz="git reset"
 alias j="git diff"
 alias up="git b -D tmp; git co -B tmp && git fetch --all && git fetch -v origin master:master && git remote -v prune origin && git co - && git branch -d tmp"
 alias pr="git pull --rebase"
+alias show="git show"
 
 hash -d w=~/w
 hash -d lab=~/lab

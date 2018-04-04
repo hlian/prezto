@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 #
 # Executes commands at login post-zshrc.
 #
@@ -29,7 +31,6 @@ if (($+TMUX)); then
   unset zle_bracketed_paste
 fi
 
-source "${ZDOTDIR:-$HOME}/.zprezto/hao/aliases.sh"
 source ~/.fzf.zsh
 setopt ignoreeof
 unsetopt case_glob
@@ -48,3 +49,7 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 if [[ $TERM_PROGRAM =~ 'iTerm.app' ]]; then
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
+
+source "${ZDOTDIR:-$HOME}/.zprezto/hao/aliases.sh"
+source "${ZDOTDIR:-$HOME}/.zprezto/hao/paths.sh"
+source "${ZDOTDIR:-$HOME}/.zprezto/hao/junegunn.zsh"
