@@ -25,31 +25,52 @@ alias brewup="brew update; brew upgrade; brew cleanup"
 alias dc="docker-compose"
 alias stackup='curl -sSL https://get.haskellstack.org/ > /tmp/a.sh && chmod +x /tmp/a.sh && /tmp/a.sh --force'
 
+alias recask='pushd ~/.emacs.d && cask build && popd'
+
 alias dgit='git --git-dir ~/dotfiles/.git'
 alias egit='git --git-dir ~/.emacs.d/.git'
+
+# [alias]
+# 	a = commit --amend -p --verbose
+# 	co = checkout
+# 	b = branch -vv
+# 	d = diff
+# 	dd = diff --cached
+# 	ri = rebase -i --autosquash
+# 	rc = rebase --cont
+# 	fixup = commit --fixup
+# 	rv = remote -v
+# 	bm = branch -vv --merged
+# 	brm = branch -rvv --merged
+
+alias s='git status'
+
+alias gl="git log --graph --pretty=format:'%w(100,0,10)%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -20"
+alias gll="gl --all -10000 --not origin/gh-pages"
+alias gam='git commit --amend -p -v'
+alias gpr="git pull --rebase"
+alias gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
+alias grz='git reset --soft HEAD^ && git reset HEAD .'
 alias gcp='git cherry-pick'
 alias gr='git rebase'
+alias gri='git rebase -i'
 alias grc='git rebase --cont'
-alias recask='pushd ~/.emacs.d && cask build && popd'
-alias am='git commit --amend -p -v'
-alias cip='git commit -p -v'
-alias ci='git commit -v'
-alias b='git branch'
-alias co='git checkout'
-alias cod='git checkout develop'
-alias com='git checkout master'
-alias s='git status'
-alias add='git add'
-alias lga="git log --graph --abbrev-commit --all --pretty=format:'%w(100,0,10)%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+alias gc='git commit -p -v'
+alias gb='git branch'
+alias gco='git checkout'
+alias gcod='git checkout develop'
+alias gcom='git checkout master'
 alias gz="git reset"
-alias j="git diff"
+alias gj="git diff"
+alias gjj="git diff --cached"
+
 alias up="git b -D tmp; git co -B tmp && git fetch --all && git fetch -v origin master:master && git remote -v prune origin && git co - && git branch -d tmp"
-alias pr="git pull --rebase"
 alias show="git show"
 
 hash -d w=~/w
 hash -d lab=~/lab
 hash -d m=~/m
+hash -d p=~/.zprezto
 
 alias ee='open -a /Applications/Emacs.app'
 alias o='cd ~/w/o'
