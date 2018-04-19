@@ -225,6 +225,7 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 # behavior.
 # zstyle ':prezto:module:utility' safe-ops 'yes'
 
+zstyle ':prezto:module:git:alias' skip yes
 zstyle ':prezto:module:git:info' verbose yes
 zstyle ':prezto:module:git:alias' skip yes
 zstyle ':prezto:module:osx:man' dash-keyword 'manpages'
