@@ -30,41 +30,30 @@ alias recask='pushd ~/.emacs.d && cask build && popd'
 alias dgit='git --git-dir ~/dotfiles/.git'
 alias egit='git --git-dir ~/.emacs.d/.git'
 
-# [alias]
-# 	a = commit --amend -p --verbose
-# 	co = checkout
-# 	b = branch -vv
-# 	d = diff
-# 	dd = diff --cached
-# 	ri = rebase -i --autosquash
-# 	rc = rebase --cont
-# 	fixup = commit --fixup
-# 	rv = remote -v
-# 	bm = branch -vv --merged
-# 	brm = branch -rvv --merged
-
+alias am='git commit --amend -v'
+alias ci='git commit -v'
+alias cip='git commit -pv'
+alias cia='git commit -av'
+alias co='git checkout'
+alias cod='git checkout develop'
+alias com='git checkout master'
+alias p='git pull'
+alias pr='git pull --rebase'
 alias s='git status'
+alias r='git rebase'
+alias ri='git rebase -i'
+alias rc='git rebase --cont'
+alias gcp='git cherry-pick'
+alias d="git diff"
+alias dd="git diff --cached"
 
 alias gl="git log --graph --pretty=format:'%w(100,0,10)%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -20"
 alias gll="gl --all -10000 --not origin/gh-pages"
-alias gam='git commit --amend -p -v'
 alias gpr="git pull --rebase"
 alias gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
 alias grz='git reset --soft HEAD^ && git reset HEAD .'
-alias gcp='git cherry-pick'
-alias gr='git rebase'
-alias gri='git rebase -i'
-alias grc='git rebase --cont'
-alias gc='git commit -p -v'
-alias gb='git branch'
-alias gco='git checkout'
-alias gcod='git checkout develop'
-alias gcom='git checkout master'
-alias gz="git reset"
-alias gj="git diff"
-alias gjj="git diff --cached"
 
-alias up="git b -D tmp; git co -B tmp && git fetch --all && git fetch -v origin master:master && git remote -v prune origin && git co - && git branch -d tmp"
+alias up="git branch -D tmp; co -B tmp && git fetch --all && git fetch -v origin master:master && git remote -v prune origin && git checkout - && git branch -d tmp"
 alias show="git show"
 
 hash -d w=~/w
