@@ -46,6 +46,7 @@ alias rc='git rebase --cont'
 alias gcp='git cherry-pick'
 alias d="git diff"
 alias dd="git diff --cached"
+alias sigh="git remote"
 
 alias gl="git log --graph --pretty=format:'%w(100,0,10)%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -20"
 alias gll="gl --all -10000 --not origin/gh-pages"
