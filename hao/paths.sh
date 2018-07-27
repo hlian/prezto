@@ -20,6 +20,8 @@ export CLICOLOR=1
 export LESS=-Ri
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
+export FZF_DEFAULT_OPTS='--color=bg+:130,bg:-1,spinner:#719e07,hl:11,fg:-1,header:#586e75,info:#cb4b16,pointer:#719e07,marker:#719e07,fg+:88,prompt:226,hl+:11'
+
 if [[ -d ~/gopath ]]; then
   export GOROOT=/usr/local/opt/go/libexec
   export GOPATH=~/gopath
