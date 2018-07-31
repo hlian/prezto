@@ -6,10 +6,6 @@ if [[ -d ~/.local/bin ]]; then
   path=("$HOME/.stack/programs/x86_64-osx/ghc-8.0.2/bin" $path)
 fi
 
-if [[ -d ~/.cask/bin ]]; then
-  path=("$HOME/.cask/bin" $path)
-fi
-
 if [[ -d ~/.cargo/bin ]]; then
   path=("$HOME/.cargo/bin" $path)
   export RUST_SRC_PATH=/Users/h/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src
