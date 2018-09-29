@@ -54,6 +54,7 @@ alias gpr="git pull --rebase"
 alias gpc='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
 alias grz='git reset --soft HEAD^ && git reset HEAD .'
 
+alias upd="git branch -D tmp; co -B tmp && git fetch --all && git fetch -v origin develop:develop && git remote -v prune origin && git checkout - && git branch -d tmp"
 alias up="git branch -D tmp; co -B tmp && git fetch --all && git fetch -v origin master:master && git remote -v prune origin && git checkout - && git branch -d tmp"
 alias show="git show"
 
