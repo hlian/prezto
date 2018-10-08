@@ -58,7 +58,8 @@ alias upd="git branch -D tmp; co -B tmp && git fetch --all && git fetch -v origi
 alias up="git branch -D tmp; co -B tmp && git fetch --all && git fetch -v origin master:master && git remote -v prune origin && git checkout - && git branch -d tmp"
 alias show="git show"
 
-hash -d w=~/w
+hash -d w=~/w/g-spotting-v2
+hash -d work=~/w
 hash -d lab=~/lab
 hash -d m=~/m
 hash -d p=~/.zprezto
