@@ -67,6 +67,7 @@ hash -d p=~/.zprezto
 alias ee='open -a /Applications/Emacs.app'
 alias o='cd ~/w/o'
 alias tf='cd ~/w/o/mobile/ios; export MATCH_USERNAME="insights@haolian.org"; export PILOT_USERNAME="insights@haolian.org"; echo .env.prod > /tmp/envfile; bundle exec fastlane testflight'
+alias y='yarn --silent'
 
 function gimme {
   while ! nc -z 127.0.0.1 "$1"; do
