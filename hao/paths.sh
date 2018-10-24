@@ -17,6 +17,7 @@ export LESS=-Ri
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 export FZF_DEFAULT_OPTS='--color=bg+:152,bg:-1,spinner:#719e07,hl:11,fg:-1,header:#586e75,info:#cb4b16,pointer:#719e07,marker:#719e07,fg+:0,prompt:226,hl+:13'
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
 
 if [[ -d ~/gopath ]]; then
   export GOROOT=/usr/local/opt/go/libexec
