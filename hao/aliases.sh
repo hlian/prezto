@@ -58,7 +58,7 @@ alias upd="git fetch --all && git fetch -v origin develop:develop && git remote 
 alias up="git fetch --all && git fetch -v origin master:master && git remote -v prune origin"
 alias show="git show"
 
-hash -d w=~/w/g-spotting-v2
+hash -d w=~/w/dashboard
 hash -d work=~/w
 hash -d lab=~/lab
 hash -d m=~/m
