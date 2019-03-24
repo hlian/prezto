@@ -13,3 +13,44 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 zstyle ':prezto:module:editor:info:keymap:primary' format '!%f'
+
+function safely_source {
+  if [[ -s "$1" ]]; then
+    source "$1";
+  fi
+}
+
+export WORDCHARS=
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
+export FZF_DEFAULT_OPTS='--color=bg+:152,bg:-1,spinner:#719e07,hl:11,fg:-1,header:#586e75,info:#cb4b16,pointer:#719e07,marker:#719e07,fg+:0,prompt:226,hl+:13'
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+source "${ZDOTDIR:-$HOME}/.zprezto/hao/aliases.sh"
+source "${ZDOTDIR:-$HOME}/.zprezto/hao/junegunn.zsh"
+
+export FZF_TMUX=0
+
+safely_source ~/.fzf.zsh
+safely_source ~/.zshrc-ssh-agent
+safely_source ~/.zshrc-here
+
+if (($+TMUX)); then
+  unset zle_bracketed_paste
+fi
+
+setopt ignoreeof
+unsetopt case_glob
+unsetopt nomatch
+bindkey "^d" delete-char
+
+export WORDCHARS=
+export CLICOLOR=1
+export LESS=-Ri
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
+if [[ $TERM_PROGRAM =~ 'iTerm.app' ]]; then
+  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+fi

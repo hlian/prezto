@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 #
 # Defines environment variables.
 #
@@ -8,4 +10,23 @@
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
+fi
+
+if [[ -d ~/.local/bin ]]; then
+  path=("$HOME/.local/bin" $path)
+  path=("$HOME/.stack/programs/x86_64-osx/ghc-8.0.2/bin" $path)
+fi
+
+if [[ -d ~/.cargo/bin ]]; then
+  path=("$HOME/.cargo/bin" $path)
+fi
+
+if [[ -d ~/gopath ]]; then
+  export GOROOT=/usr/local/opt/go/libexec
+  export GOPATH=~/gopath
+  path=($path "$GOROOT/bin" "$GOPATH/bin")
+fi
+
+if [[ -d ~/.fzf/bin ]]; then
+  path=($path "$HOME/.fzf/bin")
 fi
