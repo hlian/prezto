@@ -1,7 +1,7 @@
 bindkey -e
 
 # Global aliases. ####################
-alias -g .l='|& less -FRX'
+alias -g .l='|& less -FRXWN'
 alias -g .b='$(git branch | fzf +s +m)'
 alias -g .rb='$(git branch -r | sed "s/origin\///" | fzf +s +m)'
 alias -g .log='$(git log --pretty=oneline --abbrev-commit -20 | fzf +s --prompt="fixup> " | awk ''{ print $1 }'')'
@@ -19,10 +19,11 @@ alias -g .f='--force-with-lease'
 alias l='ls -Fha'
 alias ll='l -l'
 alias reload='. ~/.zshrc'
-alias v='vim'
+alias v='nvim'
 alias xargsi="xargs -I {}"
 alias brewup="brew update; brew upgrade; brew cleanup"
 alias dc="docker-compose"
+alias c="cargo"
 alias stackup='curl -sSL https://get.haskellstack.org/ > /tmp/a.sh && chmod +x /tmp/a.sh && /tmp/a.sh --force'
 
 alias recask='pushd ~/.emacs.d && cask build && popd'
@@ -66,13 +67,16 @@ hash -d p=~/.zprezto
 
 alias ee='open -a /Applications/Emacs.app'
 alias o='cd ~/w/o'
-alias tf='cd ~/w/o/mobile/ios; export MATCH_USERNAME="insights@haolian.org"; export PILOT_USERNAME="insights@haolian.org"; echo .env.prod > /tmp/envfile; bundle exec fastlane testflight'
 alias y='yarn --silent'
 alias rg='rg --hidden'
 alias bother='hub pull-request'
+alias cb='cd ~/w/source/app/source-ui/web-backend'
+alias cf='cd ~/w/source/app/source-ui/web-frontend'
 
 function gimme {
   while ! nc -z 127.0.0.1 "$1"; do
     sleep 0.5
   done
 }
+
+function fcd () { [[ -f "$1" ]] && { cd "$(dirname "$1")"; } || { cd "$1"; } }
