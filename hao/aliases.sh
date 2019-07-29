@@ -59,7 +59,7 @@ alias upd="git fetch --all && git fetch -v origin develop:develop && git remote 
 alias up="git fetch --all && git fetch -v origin master:master && git remote -v prune origin"
 alias show="git show"
 
-hash -d w=~/w/dashboard
+alias nt="open -a iTerm"
 hash -d work=~/w
 hash -d lab=~/lab
 hash -d m=~/m
@@ -70,8 +70,6 @@ alias o='cd ~/w/o'
 alias y='yarn --silent'
 alias rg='rg --hidden'
 alias bother='hub pull-request'
-alias cb='cd ~/w/source/app/source-ui/web-backend'
-alias cf='cd ~/w/source/app/source-ui/web-frontend'
 
 function gimme {
   while ! nc -z 127.0.0.1 "$1"; do
