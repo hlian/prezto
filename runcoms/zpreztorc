@@ -11,6 +11,10 @@
 # General
 #
 
+function git-branch-current {
+  source ~/.zprezto/modules/git/functions/git-branch-current
+}
+
 # Set case-sensitivity for completion, history lookup, etc.
 # zstyle ':prezto:*:*' case-sensitive 'yes'
 
