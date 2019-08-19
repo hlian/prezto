@@ -68,7 +68,7 @@ hash -d p=~/.zprezto
 alias ee='open -a /Applications/Emacs.app'
 alias o='cd ~/w/o'
 alias y='yarn --silent'
-alias rg='rg --hidden'
+alias rg=rg '--glob=!.git/*' --hidden
 alias bother='hub pull-request'
 
 function gimme {
