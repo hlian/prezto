@@ -1,5 +1,9 @@
 bindkey -e
 
+function xxx {
+  export FZF_CTRL_T_COMMAND="rg --files --hidden --no-ignore"
+}
+
 # Global aliases. ####################
 alias -g .l='|& less -FRXWN'
 alias -g .b='$(git branch | fzf +s +m)'
@@ -35,9 +39,6 @@ alias am='git commit --amend -pv'
 alias ci='git commit -v'
 alias cip='git commit -pv'
 alias cia='git commit -av'
-alias co='git checkout'
-alias cod='git checkout develop'
-alias com='git checkout master'
 alias p='git pull'
 alias pr='git pull --rebase'
 alias s='git status -s'
@@ -58,6 +59,10 @@ alias grz='git reset --soft HEAD^ && git reset HEAD .'
 alias upd="git fetch --all && git fetch -v origin develop:develop && git remote -v prune origin"
 alias up="git fetch --all && git fetch -v origin master:master && git remote -v prune origin"
 alias show="git show"
+
+alias co='git switch'
+alias com='git switch master'
+alias re='git restore'
 
 alias nt="open -a iTerm"
 hash -d work=~/w
