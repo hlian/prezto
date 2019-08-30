@@ -1,4 +1,3 @@
-#!/usr/bin/env zsh
 
 #
 # Executes commands at the start of an interactive session.
@@ -30,6 +29,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 source "${ZDOTDIR:-$HOME}/.zprezto/hao/aliases.sh"
 source "${ZDOTDIR:-$HOME}/.zprezto/hao/junegunn.zsh"
+source "${ZDOTDIR:-$HOME}/.zprezto/modules/zsh-bd/bd.zsh"
 
 export FZF_TMUX=0
 

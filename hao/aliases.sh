@@ -82,4 +82,4 @@ function gimme {
   done
 }
 
-function fcd () { [[ -f "$1" ]] && { cd "$(dirname "$1")"; } || { cd "$1"; } }
+function fd () { [[ -f "$1" ]] && { cd "$(dirname "$1")"; } || { cd "$1"; } }
