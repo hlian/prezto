@@ -54,3 +54,10 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 if [[ $TERM_PROGRAM =~ 'iTerm.app' ]]; then
   test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
+
+fpath=( ${ZDOTDIR:-$HOME}/.zprezto/modules/zsh-dirnav "${fpath[@]}" )
+autoload -Uz dirnav
+dirnav
+bindkey "^g^j" _dirnav_parent
+bindkey "^g^k" _dirnav_child
+prompt fire
