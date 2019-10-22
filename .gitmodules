@@ -36,3 +36,6 @@
 [submodule "modules/zsh-bd"]
 	path = modules/zsh-bd
 	url = https://github.com/Tarrasch/zsh-bd
+[submodule "modules/zsh-dirnav"]
+	path = modules/zsh-dirnav
+	url = https://github.com/gparker42/zsh-dirnav
