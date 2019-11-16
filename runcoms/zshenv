@@ -30,3 +30,5 @@ fi
 if [[ -d ~/.fzf/bin ]]; then
   path=($path "$HOME/.fzf/bin")
 fi
+
+export HOMEBREW_NO_ANALYTICS=1
