@@ -61,4 +61,3 @@ autoload -Uz dirnav
 dirnav
 bindkey "^g^j" _dirnav_parent
 bindkey "^g^k" _dirnav_child
-prompt fire
