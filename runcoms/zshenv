@@ -12,9 +12,17 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+# XDG -hao
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME"/bundle BUNDLE_USER_CACHE="$XDG_CACHE_HOME"/bundle BUNDLE_USER_PLUGIN="$XDG_DATA_HOME"/bundle
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+
 if [[ -d ~/.local/bin ]]; then
   path=("$HOME/.local/bin" $path)
-  path=("$HOME/.stack/programs/x86_64-osx/ghc-8.0.2/bin" $path)
 fi
 
 if [[ -d ~/.cargo/bin ]]; then
@@ -27,8 +35,6 @@ if [[ -d ~/gopath ]]; then
   path=($path "$GOROOT/bin" "$GOPATH/bin")
 fi
 
-if [[ -d ~/.fzf/bin ]]; then
-  path=($path "$HOME/.fzf/bin")
-fi
+path=($path "${XDG_CONFIG_HOME}/fzf/bin")
 
 export HOMEBREW_NO_ANALYTICS=1
