@@ -37,4 +37,8 @@ fi
 
 path=($path "${XDG_CONFIG_HOME}/fzf/bin")
 
+if [[ -d /usr/local/opt/emacs-plus/bin ]]; then
+  path=($path "/usr/local/opt/emacs-plus/bin")
+fi
+
 export HOMEBREW_NO_ANALYTICS=1
