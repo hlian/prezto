@@ -12,7 +12,7 @@
 #
 
 function git-branch-current {
-  source "${XDG_CONFIG_HOME}"/zsh/.zprezto/modules/git/functions/git-branch-current
+  source "${ZDOTDIR}"/.zprezto/modules/git/functions/git-branch-current
 }
 
 # Set case-sensitivity for completion, history lookup, etc.

@@ -19,18 +19,15 @@ alias -g .fw='--file-watch'
 alias -g .bb='$(git rev-parse --abbrev-ref HEAD)'
 alias -g .rbb='$(git for-each-ref --format="%(upstream:short)" $(git symbolic-ref -q HEAD))'
 alias -g .f='--force-with-lease'
+alias -g .m='origin/master'
 
 alias l='ls -Fha'
 alias ll='l -l'
-alias reload='. ~/.zshrc'
+alias reload=". ${ZDOTDIR}/.zshrc"
 alias v='nvim'
 alias xargsi="xargs -I {}"
 alias brewup="brew update; brew upgrade; brew cleanup"
-alias dc="docker-compose"
-alias c="cargo"
-alias stackup='curl -sSL https://get.haskellstack.org/ > /tmp/a.sh && chmod +x /tmp/a.sh && /tmp/a.sh --force'
-
-alias recask='pushd ~/.emacs.d && cask build && popd'
+alias cdc="cd ~/.config"
 
 alias dgit='git --git-dir ~/dotfiles/.git'
 alias egit='git --git-dir ~/.emacs.d/.git'
@@ -85,3 +82,12 @@ function ee {
 }
 
 function fd () { [[ -f "$1" ]] && { cd "$(dirname "$1")"; } || { cd "$1"; } }
+
+unalias e >&/dev/null
+function e {
+  TERM=xterm-24bit emacsclient -nw -c $1
+}
+
+function ee {
+  TERM=xterm-24bit emacsclient -c $1 &
+}
