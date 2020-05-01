@@ -69,7 +69,6 @@ hash -d lab=~/lab
 hash -d m=~/m
 hash -d p=~/.zprezto
 
-alias ee='open -a /Applications/Emacs.app'
 alias o='cd ~/w/o'
 alias y='yarn --silent'
 alias rg=rg '--glob=!.git/*' --hidden
@@ -79,6 +78,10 @@ function gimme {
   while ! nc -z 127.0.0.1 "$1"; do
     sleep 0.5
   done
+}
+
+function ee {
+  emacsclient -c "$1" &
 }
 
 function fd () { [[ -f "$1" ]] && { cd "$(dirname "$1")"; } || { cd "$1"; } }
