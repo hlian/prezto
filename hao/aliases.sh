@@ -69,7 +69,15 @@ hash -d p=~/.zprezto
 alias o='cd ~/w/o'
 alias y='yarn --silent'
 alias rg=rg '--glob=!.git/*' --hidden
-alias bother='hub pull-request'
+alias g="bundle exec fastlane gym --export_method developer-id"
+
+function nn {
+  bundle exec fastlane run notarize --verbose verbose:'true' print_log:'true' "package:$1/InsertGif.app"
+}
+
+function sign {
+  ~/Desktop/sign_update "$1/InsertGif.app.zip"
+}
 
 function gimme {
   while ! nc -z 127.0.0.1 "$1"; do
