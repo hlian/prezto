@@ -69,7 +69,7 @@ hash -d p=~/.zprezto
 alias o='cd ~/w/o'
 alias y='yarn --silent'
 alias rg=rg '--glob=!.git/*' --hidden
-alias g="bundle exec fastlane gym --export_method developer-id"
+alias g="bundle exec fastlane gym --export_method developer-id --scheme InsertGif; say HELLO"
 
 function nn {
   bundle exec fastlane run notarize --verbose verbose:'true' print_log:'true' "package:$1/InsertGif.app"
