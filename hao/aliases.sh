@@ -27,7 +27,7 @@ alias reload=". ${ZDOTDIR}/.zshrc"
 alias v='nvim'
 alias xargsi="xargs -I {}"
 alias brewup="brew update; brew upgrade; brew cleanup"
-alias cdc="cd ~/.config"
+alias cdcc="cd ~/.config"
 
 alias dgit='git --git-dir ~/dotfiles/.git'
 alias egit='git --git-dir ~/.emacs.d/.git'
@@ -46,6 +46,7 @@ alias gcp='git cherry-pick'
 alias d="git diff"
 alias dd="git diff --cached"
 alias sigh="git remote"
+alias ed="emacs --daemon"
 
 alias gl="git log --graph --pretty=format:'%w(100,0,10)%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -20"
 alias gll="gl --all -10000 --not origin/gh-pages"
@@ -60,7 +61,6 @@ alias co='git switch'
 alias com='git switch master'
 alias re='git restore'
 
-alias nt="open -a iTerm"
 hash -d work=~/w
 hash -d lab=~/lab
 hash -d m=~/m
@@ -93,9 +93,9 @@ function fd () { [[ -f "$1" ]] && { cd "$(dirname "$1")"; } || { cd "$1"; } }
 
 unalias e >&/dev/null
 function e {
-  TERM=xterm-24bit emacsclient -nw -c $1
+  emacsclient -nw -c $1
 }
 
 function ee {
-  TERM=xterm-24bit emacsclient -c $1 &
+  emacsclient -c $1 &
 }

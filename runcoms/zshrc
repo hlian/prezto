@@ -37,7 +37,7 @@ export FZF_TMUX=0
 
 safely_source ~/.fzf.zsh
 safely_source ~/.zshrc-ssh-agent
-safely_source ~/.zshrc-here
+safely_source $ZDOTDIR/.zsh-here
 
 if (($+TMUX)); then
   unset zle_bracketed_paste
